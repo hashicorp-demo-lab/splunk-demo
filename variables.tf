@@ -40,13 +40,13 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-variable "aws_key_name" {
-  default     = "user-key"
-  description = "stored aws ssh key"
-}
+# variable "aws_key_name" {
+#   default     = "user-key"
+#   description = "stored aws ssh key"
+# }
 
-variable "ssh_key" {
-  default = "/Users/ssh/private_key"
-  description = "location of ssh private key file"
+# variable "ssh_key" {
+#   default = "/Users/ssh/private_key"
+#   description = "location of ssh private key file"
   
-}
+# }
