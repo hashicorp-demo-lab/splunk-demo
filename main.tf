@@ -185,7 +185,7 @@ resource "null_resource" "configure-splunk-app" {
   connection {
     type        = "ssh"
     user        = "centos"
-    private_key = module.key_pair.private_key_id
+    private_key = module.key_pair.private_key_name
     host        = aws_eip.splunk.public_ip
   }
 
