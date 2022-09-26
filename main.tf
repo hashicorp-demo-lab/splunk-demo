@@ -156,7 +156,7 @@ resource "aws_eip_association" "splunk" {
 resource "aws_instance" "splunk" {
   ami                         = data.aws_ami.centos.id
   instance_type               = var.instance_type 
-  key_name                    = module.key_pair.key_pair_id
+  key_name                    = module.key_pair.private_key_name
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.splunk.id
   vpc_security_group_ids      = [aws_security_group.splunk.id]
@@ -214,7 +214,7 @@ resource "null_resource" "configure-splunk-app" {
     connection {
       type        = "ssh"
       user        = "centos"
-      private_key = module.key_pair.private_key_id
+      private_key = module.key_pair.private_key_name
       host        = aws_eip.splunk.public_ip
     }
   }
