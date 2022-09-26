@@ -40,6 +40,18 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
+variable "ttl" {
+  description = "Specifies the AWS Time To Live before reaping."
+  default     = "8"
+}
+
+variable "name" {
+  description = "Specifies the internal HashiCorp owner."
+  default     = "Armon Hashimoto"
+}
+
+
+
 # variable "aws_key_name" {
 #   default     = "user-key"
 #   description = "stored aws ssh key"

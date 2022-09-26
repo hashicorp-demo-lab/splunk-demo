@@ -168,6 +168,8 @@ resource "aws_instance" "splunk" {
 
   tags = {
     Name = "${var.prefix}-splunk-instance"
+    ttl  = var.ttl
+    owner = var.name
   }
 
 }
