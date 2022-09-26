@@ -1,9 +1,9 @@
 #provider "google" {
 #  version = "~> 3.31.0"
 #}
-provider "azurerm" {
-  features {}
-}
+# provider "azurerm" {
+#   features {}
+# }
 
 module "dns" { 
   source = "github.com/chuysmans/dns-multicloud"
