@@ -6,7 +6,7 @@ provider "azurerm" {
 }
 
 module "dns" { 
-  source = "https://github.com/chuysmans/dns-multicloud"
+  source = "github.com/chuysmans/dns-multicloud"
   hosted-zone = "hashidemos.io"
    namespace   = var.prefix                  # HashiCorp username
    owner       = var.prefix                  # HashiCorp email (no @ symbol)
