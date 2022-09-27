@@ -5,6 +5,7 @@ output "splunk_eip_aws" {
 
 output "splunk_url" {
   value = "https://${aws_route53_record.splunk.fqdn}:8000"
+}
 
 output "splunk_ip" {
   value = "http://${aws_eip.splunk.public_ip}"
