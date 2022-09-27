@@ -3,6 +3,15 @@
 This repository will deploy a Splunk Enterprise instance into AWS and pre-configure some indexes and dashboards to collect logging and telemetry from HashiCorp Vault, HCP Vault and Terraform Cloud for Business.
 
 ### Get Started
+1. Clone the repo locally
+1. Connect the repo to a new TFC worksapce 
+1. Ensure that the essential variables are configured:
+1.1 AWS Credentials
+1.1 Prefix, Email, ttl and name
+1. Create an initial plan via the TFC UI
+1. If all the above is done correctly, you'll have a working splunk environment at 
+
+
 Update the following files;
 1. `hec_config.sh` - Include the unique Token generated from the logging/metric source.
 2. `user-seed.conf` - Update username and password as required.
