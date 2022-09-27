@@ -28,25 +28,9 @@ resource "acme_certificate" "certificate" {
   ]
 }
 
-output "certificate_url" {
-  value = acme_certificate.certificate.certificate_url
-}
-
-output "private_key" {
-  value = nonsensitive(acme_certificate.certificate.private_key_pem)
-}
-
 resource "local_sensitive_file" "private_key_file" {
   content = acme_certificate.certificate.private_key_pem
   filename = "${path.module}/files/mySplunkWebPrivateKey.key"
-}
-
-output "certificate_pem" {
-  value = acme_certificate.certificate.certificate_pem
-}
-
-output "certificate_fullchain" {
-  value = "${acme_certificate.certificate.certificate_pem}${acme_certificate.certificate.issuer_pem}"
 }
 
 resource "local_file" "certificate_chain" {
