@@ -3,11 +3,12 @@
 This repository will deploy a Splunk Enterprise instance into AWS and pre-configure some indexes and dashboards to collect logging and telemetry from HashiCorp Vault, HCP Vault and Terraform Cloud for Business.
 
 ### Get Started
-1. Clone the repo locally
-1. Connect the repo to a new TFC worksapce 
+1. Clone the repo to your own github account
+1. Connect the repo to a new TFC worksapce using the VCS workflow
 1. Ensure that the essential variables are configured:
     1. AWS Credentials
     1. Prefix, Email, ttl and name
+    1. splunk_domain 
 1. Create an initial plan via the TFC UI
 1. If all the above is done correctly, you'll have a working splunk environment at the output of the `splunk_url` 
 
@@ -37,7 +38,8 @@ This repository will deploy a Splunk Enterprise instance into AWS and pre-config
 1. Restart Splunk as part of the process
 1. Within the Splunk UI ensure that the collector token is enabled: 
     1. Settings -> Data Inputs -> HTTP Event Collector -> Global Settings -> All Tokens = Enabled
-    1. Collect the Token Value for the HCP_Vault_Events
+    1. Collect the Token Value for the `HCP_Vault_Events`
 1. Open HCP Dashboard and navigate to your Vault cluster and then Metrics
 1. Configure the Splunk app with your HEC and token from above
-1. HEC Might look something like `https://splunk.cameron.aws.hashidemos.io:8088` 
+    1. HEC Might look something like `https://splunk.cameron.aws.hashidemos.io:8088` 
+    1. Note: there is no need to use the example from the HCP-V tutorial or from Splunk website!
