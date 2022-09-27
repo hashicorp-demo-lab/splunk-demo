@@ -1,10 +1,4 @@
-#provider "google" {
-#  version = "~> 3.31.0"
-#}
-# provider "azurerm" {
-#   features {}
-# }
-
+# Use the DNS module to create the required zones in AWS only
 module "dns" { 
   source = "github.com/chuysmans/dns-multicloud"
   hosted-zone = "hashidemos.io"
@@ -12,23 +6,6 @@ module "dns" {
    owner       = var.prefix                  # HashiCorp email (no @ symbol)
    create_aws_dns_zone   = true              # should be set to true
 }
-
-# module "dns" {  
-#   source = "github.com/lhaig/terraform-dns-multicloud?ref=v0.3.0"
-
-#   hosted-zone = "hashidemos.io"
-#   namespace   = var.prefix                  # HashiCorp username
-#   owner       = var.prefix                  # HashiCorp email (no @ symbol)
-
-#   create_aws_dns_zone   = true              # should be set to true
-  
-#   create_azure_dns_zone = false              # optional
-#   azure_location        = "westus"          # Azure creates a resource group
-#                                             #   which requires a region
-                                    
-#   create_gcp_dns_zone   = false              # optional
-#   gcp_project           = "robert-peteuil"  # name of your GCP project
-# }
 
 # Update DNS name
 resource "aws_route53_record" "splunk" {
