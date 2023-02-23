@@ -204,9 +204,9 @@ resource "null_resource" "configure-splunk-app" {
       "sudo cp /home/centos/web.conf /opt/splunk/etc/system/local/",
       "sudo cp -f /home/centos/server.pem /opt/splunk/etc/auth/server.pem",
       "sudo /opt/splunk/bin/splunk start",
-      "sudo /opt/splunk/bin/splunk install app /home/centos/hashicorp-cloud-platform-app-for-splunk_003.tgz -auth $(awk 'NR==2 {print $3}' /home/centos/user-seed.conf):$(awk 'NR==3 {print $3}' /home/centos/user-seed.conf)",
+      /* "sudo /opt/splunk/bin/splunk install app /home/centos/hashicorp-cloud-platform-app-for-splunk_003.tgz -auth $(awk 'NR==2 {print $3}' /home/centos/user-seed.conf):$(awk 'NR==3 {print $3}' /home/centos/user-seed.conf)",
       "sudo /opt/splunk/bin/splunk install app /home/centos/hashicorp-vault-app-for-splunk_103.tgz -auth $(awk 'NR==2 {print $3}' /home/centos/user-seed.conf):$(awk 'NR==3 {print $3}' /home/centos/user-seed.conf)",
-      "sudo /opt/splunk/bin/splunk install app /home/centos/terraform-cloud-for-splunk_008.tgz -auth $(awk 'NR==2 {print $3}' /home/centos/user-seed.conf):$(awk 'NR==3 {print $3}' /home/centos/user-seed.conf)",
+      "sudo /opt/splunk/bin/splunk install app /home/centos/terraform-cloud-for-splunk_008.tgz -auth $(awk 'NR==2 {print $3}' /home/centos/user-seed.conf):$(awk 'NR==3 {print $3}' /home/centos/user-seed.conf)", */
       "sudo sh /home/centos/hec_config.sh",
       "sudo sh /home/centos/enable_index.sh",
     ]
